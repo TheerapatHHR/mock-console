@@ -14,8 +14,11 @@ export default async function Home() {
         <h1 className="flex item-center text-[60px]">PARTNER-CONSOLE</h1>
         
         <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <SignIn />
-          <SignOut />
+          <div className="text-sm sm:text-base">
+            {session?.user ? (<SignOut />) : (<SignIn />)}
+          </div>
+
+          {/* <SignOut /> */}
         </div>
       </main>
       
